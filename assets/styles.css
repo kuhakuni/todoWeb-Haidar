@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* define var */
+:root {
+	--primary: #1f28cf;
+	--secondary: #fff;
+	--primary-hover: #2d37f3;
+}
+
 * {
 	font-family: "Poppins", sans-serif;
 }
@@ -14,6 +21,26 @@ a {
 	margin-bottom: 15px;
 }
 
+.landing {
+	background-image: url("../assets/img/bg-landing.svg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-image: url("../assets/img/bg-login.svg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 .subtitle {
 	font-size: 24px;
 	color: #000;
@@ -25,12 +52,12 @@ a {
 	line-height: 0;
 	padding: 15px 100px;
 	transition: 0.5s;
-	background-color: #000;
+	background-color: var(--primary);
 	color: #fff;
 }
 
 .btn-start:hover {
-	background-color: #161616;
+	background-color: var(--primary-hover);
 }
 
 .btn-login {
@@ -38,13 +65,13 @@ a {
 	line-height: 0;
 	padding: 20px 100px;
 	transition: 0.5s;
-	background-color: #000;
+	background-color: var(--primary);
 	color: #fff;
 }
 
 .btn-login:hover {
 	color: #fff;
-	background-color: #161616;
+	background-color: var(--primary-hover);
 }
 
 input {
@@ -57,7 +84,7 @@ input {
 	right: 36px;
 	bottom: 36px;
 	z-index: 1;
-	background: #000;
+	background: var(--primary);
 	width: 56px;
 	height: 56px;
 	border-radius: 50%;
@@ -66,5 +93,78 @@ input {
 }
 
 .btn-add-todo:hover {
-  background: #161616;
+	background: var(--primary-hover);
+}
+
+.btn-nav-logout {
+	cursor: pointer;
+	line-height: 0;
+	padding: 20px 40px;
+	transition: 0.5s;
+	background-color: var(--primary);
+	color: #fff;
+}
+
+.btn-nav-logout:hover {
+	color: #fff;
+	background-color: var(--primary-hover);
+}
+
+.btn-insert-todo {
+	cursor: pointer;
+	line-height: 0;
+	padding: 20px 40px;
+	transition: 0.5s;
+	background-color: var(--primary);
+	color: #fff;
+}
+
+.btn-insert-todo:hover {
+	color: #fff;
+	background-color: var(--primary-hover);
+}
+
+.nav-item a:not(.btn-nav-logout) {
+	cursor: pointer;
+	line-height: 0;
+	font-size: 18px;
+	transition: 0.2s;
+	color: #000;
+}
+
+.nav-item .active {
+	color: var(--primary) !important;
+	font-weight: 700;
+}
+
+.nav-item a:not(.btn-nav-logout):hover {
+	color: var(--primary-hover);
+	font-weight: 700;
+}
+
+.text-primary {
+	color: var(--primary) !important;
+}
+
+.bg-primary {
+	background-color: var(--primary) !important;
+}
+
+.todo-item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex-direction: row;
+	box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.2);
+	border-radius: 1rem;
+	padding: 1.5rem;
+	justify-content: space-between;
+	margin: 1rem;
+	border: 10px solid transparent;
+}
+
+.todo-item:hover {
+	background-color: var(--primary);
+	color: #fff;
+	cursor: pointer;
 }

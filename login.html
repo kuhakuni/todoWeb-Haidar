@@ -13,40 +13,76 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css"
 		/>
+
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<!-- Icon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./assets/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./assets/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="./assets/favicon/site.webmanifest" />
 		<link rel="stylesheet" href="./assets/styles.css" />
 		<title>Login | Todo App</title>
 	</head>
-	<body class="d-flex justify-content-center align-items-center min-vh-100">
-		<div class="row align-items-center">
-			<div class="col-md-5">
+	<body class="login">
+		<div class="row d-flex justify-content-center align-items-center">
+			<div class="col-md-5" data-aos="zoom-out">
 				<img
-					src="./assets/img/undraw_access_account.svg"
+					src="./assets/img/img-login.svg"
 					alt="Login img"
 					class="img-fluid"
+					width="800"
 				/>
 			</div>
-			<div class="col-md-6 offset-md-1">
+			<div class="col-md-5 d-flex justify-content-end">
 				<div class="w-75 d-flex align-items-center flex-column">
 					<div>
-						<h1 class="title fw-semibold text-center">Welcome Back👋</h1>
-						<p class="fs-5 mb-4 text-center">
-							Enter your username and password to continue.
+						<h1 class="title fw-semibold text-center" data-aos="fade-up">
+							Welcome Back👋
+						</h1>
+						<p
+							class="fs-5 mb-4 text-center"
+							data-aos="fade-up"
+							data-aos-delay="200"
+						>
+							Enter your email and password to continue.
 						</p>
+						<p
+							id="error-message"
+							class="text-danger text-center fw-semibold"
+							data-aos="fade-up"
+							data-aos-delay="200"
+						></p>
 					</div>
 					<form
 						action="home.html"
 						method="POST"
+						id="login-form"
 						class="w-100 d-flex flex-column"
+						data-aos="fade-up"
+						data-aos-delay="400"
 					>
 						<div class="mb-3">
-							<label for="username" class="form-label">Username</label>
+							<label for="email" class="form-label">Email</label>
 							<input
-								type="text"
+								type="email"
 								class="form-control"
-								id="username"
-								name="username"
-								placeholder="Enter your username"
+								id="email"
+								name="email"
+								placeholder="Enter your email"
 								required
 							/>
 						</div>
@@ -69,18 +105,8 @@
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script>
 			AOS.init();
-      const form = document.querySelector('form');
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const username = form.username.value;
-        const password = form.password.value;
-        if (username === 'admin' && password === 'admin') {
-          window.location.href = 'home.html';
-        } else {
-          alert('Invalid username or password');
-        }
-      });
 		</script>
+		<script src="./assets/script.js"></script>
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
